@@ -1,0 +1,164 @@
+﻿:root {
+  --bg: #f5f3ee;
+  --card: #ffffff;
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --brand: #0f766e;
+  --brand-soft: #ccfbf1;
+  --danger: #b91c1c;
+  --ok: #166534;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at top right, #d6fff8, transparent 35%), var(--bg);
+}
+
+.page {
+  max-width: 920px;
+  margin: 24px auto;
+  padding: 0 14px 24px;
+  display: grid;
+  gap: 14px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.hero h1,
+.form-card h2,
+.list-card h2 {
+  margin: 0 0 8px;
+}
+
+.hero p {
+  margin: 0;
+  color: var(--muted);
+}
+
+#habit-form {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1.2fr 1fr 140px 140px;
+}
+
+input,
+select,
+button {
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  padding: 10px;
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+}
+
+.list-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+#habit-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.habit-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.habit-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge {
+  background: var(--brand-soft);
+  color: var(--brand);
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+.controls button.secondary {
+  background: #1f2937;
+}
+
+.controls button.danger {
+  background: var(--danger);
+}
+
+.completed {
+  border-color: #86efac;
+  background: #f0fdf4;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.stat {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.stat b {
+  display: block;
+  font-size: 22px;
+  color: var(--ok);
+}
+
+@media (max-width: 820px) {
+  #habit-form {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .habit-main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

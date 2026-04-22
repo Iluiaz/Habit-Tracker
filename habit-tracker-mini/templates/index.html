@@ -1,0 +1,46 @@
+﻿<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card hero">
+        <h1>Habit Tracker</h1>
+        <p>Мини-проект: контроль привычек с дневными отметками и streak.</p>
+      </section>
+
+      <section class="card stats" id="stats"></section>
+
+      <section class="card form-card">
+        <h2>Новая привычка</h2>
+        <form id="habit-form">
+          <input id="title" name="title" placeholder="Например: Читать 20 минут" required />
+          <input id="category" name="category" placeholder="Категория: учёба / спорт" />
+          <select id="frequency" name="frequency">
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+          </select>
+          <button type="submit">Добавить</button>
+        </form>
+      </section>
+
+      <section class="card list-card">
+        <div class="list-head">
+          <h2>Список привычек</h2>
+          <select id="filter">
+            <option value="all">Все</option>
+            <option value="active">Не выполнены сегодня</option>
+            <option value="done">Выполнены сегодня</option>
+          </select>
+        </div>
+        <ul id="habit-list"></ul>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
